@@ -66,7 +66,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000',
+    'http://localhost:5173',
     'http://localhost:8000',
 )
 
@@ -104,6 +104,7 @@ DATABASES = {
     }
 }
 
+# ALTER ROLE dbadmin CREATEDB; (it's for testing)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
