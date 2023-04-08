@@ -8,6 +8,7 @@ class FunctionalTest(StaticLiveServerTestCase):
     def setUp(self):
         """установка"""
         self.browser = webdriver.Chrome()
+        self.browser.maximize_window()
         self.live_server_url = 'http://localhost:5173'
 
     def tearDown(self):
