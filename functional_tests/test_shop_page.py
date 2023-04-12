@@ -25,7 +25,7 @@ class MyShopTest(FunctionalTest):
         """тест: пользователь может перейти на страницу магазина"""
 
         # Эдит переходит на сайт интернет магазина
-        self.browser.get(self.live_server_url)
+        self.browser.get(self.live_frontend_server_url)
 
         # Она видит ссылку на страницу магазина
         self.browser.find_element(By.LINK_TEXT, 'Магазин').click()
@@ -40,13 +40,13 @@ class MyShopTest(FunctionalTest):
         """тест: можно перейти на страницу пользователя"""
 
         # Эдит переходит на страницу магазина
-        self.browser.get(f'{self.live_server_url}/shop')
+        self.browser.get(f'{self.live_frontend_server_url}/shop')
 
         # Там она находит товар который её интересует и переходит на его
         # страницу
         product_link = self.wait_for(
             lambda: self.browser.find_element(By.CSS_SELECTOR,
-                                                 '.product-item__title a'))
+                                              '.product-item__title a'))
         product_link_text = product_link.text
         product_link.click()
 
