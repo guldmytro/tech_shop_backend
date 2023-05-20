@@ -8,7 +8,8 @@ class ProductSerializer(FlexFieldsModelSerializer,
     class Meta:
         model = Product
         fields = ('id', 'name', 'slug', 'fullname', 'sku', 'image',
-                  'description', 'price', 'available', 'description')
+                  'description', 'price', 'available', 'quantity',
+                  'description')
         lookup_field = 'slug'
         extra_kwargs = {
             'url': {'lookup_field': 'slug'}

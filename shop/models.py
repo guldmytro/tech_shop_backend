@@ -15,7 +15,8 @@ class Product(models.Model):
     description = models.TextField(verbose_name='Description', blank=True,
                                    null=True)
     price = models.PositiveIntegerField()
-    available = models.BooleanField(default=True)
+    available = models.BooleanField(verbose_name='In stock', default=True)
+    quantity = models.IntegerField(verbose_name='Quantity', default=-1)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

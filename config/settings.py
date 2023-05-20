@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # 3rd party
     'rest_framework',
     'corsheaders',
+    'django_filters',
     # Local
     'profiles.apps.ProfilesConfig',
     'shop.apps.ShopConfig',
@@ -51,7 +52,10 @@ AUTH_USER_MODEL = 'profiles.AdvUser'
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
-    ]
+    ],
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ),
 }
 
 MIDDLEWARE = [
